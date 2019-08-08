@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Dream Trips</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <h1>
+        <%= title %>
+    </h1>
+    <p>Welcome to
+        <%= title %>
+    </p>
+
+    <br>
+    <br>
+
+
+    <div class="card-deck">
+
+        <div class="card">
+            <a href="/paris">
+                <img src="images/img1.jpg" class="card-img-top" alt="paris" style="height: 400px;">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+
+                </p>
+                <form method="get" action="./paris">
+                    <button type="submit">Continue to Paris</button>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <a href="/london">
+                <img src="images/img2.jpg" class="card-img-top" alt="london" style="height: 400px;">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+
+                </p>
+                <form method="get" action="/london">
+                    <button type="submit">Continue to London</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <a href="/barca">
+                <img src="images/img3.jpg" class="card-img-top" alt="barca" style="height: 400px;">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <form method="get" action="/barca">
+                    <button type="submit">Continue to Barcelona</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <a href="/berlin">
+                <img src="images/img4.jpg" class="card-img-top" alt="berlin">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                </p>
+                <form method="get" action="/berlin">
+                    <button type="submit">Continue to Berlin</button>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div class="card-deck">
+        <div class="card" style="width: 18rem;">
+            <a href="">
+                <img src="images/img5.jpg" class="card-img-top" alt="sanfran">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <a href="">
+                <img src="images/img6.jpg" class="card-img-top" alt="sidney">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+
+                </p>
+            </div>
+        </div>
+
+        <div class="card" style="width: 18rem;">
+            <a href="">
+                <img src="images/img7.jpg" class="card-img-top" alt="losangel">
+            </a>
+
+            <div class="card-body">
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
