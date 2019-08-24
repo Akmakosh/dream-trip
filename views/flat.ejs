@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container lower">
+        <h3>
+            <a href="/" class="homeLink">
+                <div id="logo-img" alt="Logo image"></div>
+            </a>
+        </h3>
+        <br>
+
+        <h1>
+            <%=title %>
+        </h1>
+        <h4>Welcome to
+            <%=title %>
+        </h4>
+
+        <div class="card-group">
+            <img src="<%=picture1 %>" class="card animate" alt="<%=title%>">
+            <img src="<%=picture2 %>" class="card animate" alt="<%=title%>">
+
+        </div>
+
+        <div class="card-group">
+            <img src="<%=picture3 %>" class="card animate" alt="<%=title%>">
+            <img src="<%=picture4 %>" class="card animate" alt="<%=title%>">
+
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+                <%=description%>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

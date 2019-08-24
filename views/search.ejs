@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Search results for
+        <%=query %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container lower">
+        <h3>
+            <a href="/" class="homeLink">
+                <div id="logo-img" alt="Logo image"></div>
+            </a>
+        </h3>
+        <h1>
+            Search results for
+            <%=query %>
+        </h1>
+        <h4>Search results for
+            <%=query %>
+        </h4>
+
+        <%JSON.parse(cities).forEach(function(city){%>
+            <div class="card-deck container tostay">
+                <div class="card-body" id="searchres">
+                    <a href="/city/" <%=city %>>
+                    <img src="<%=city.pictureUrl %>" class="card-img-top" alt="<%=city.title%>">
+                </a>
+                    <div class="card-body">
+                        <p class="card-text">
+                            <%=city.description%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <%});%>
+
+    </div>
+</body>
+
+</html>

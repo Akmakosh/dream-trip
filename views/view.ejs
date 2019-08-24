@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%=title %>
+    </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container lower">
+        <h3>
+            <a href="/" class="homeLink">
+                <%=title %>
+                    <div id="logo-img" alt="Logo image"></div>
+            </a>
+        </h3>
+        <br>
+
+
+        <h1>Welcome to
+            <%=title %>
+        </h1>
+
+        <div class="card text-center" style="width: 40rem;">
+            <a href="/city/" <%=city %>>
+            <img src="<%=pictureUrl %>" class="card-img-top" alt="<%=title%>">
+        </a>
+            <div class="card-body">
+                <p class="card-text">
+                    <%=description%>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <h2>
+        <%= city%> places to stay
+    </h2>
+
+    <ul class="inline">
+        <% JSON.parse(flats).forEach(function(flat) { %>
+            <li class="inline">
+                <%= flat.title %> -
+                    <a href="/flat/<%= flat._id%>">
+                    <img src="<%= flat.picture1%>">
+                        </a>
+            </li>
+            <% }); %>
+
+    </ul>
+</body>
+
+</html>

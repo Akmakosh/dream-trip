@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <% JSON.parse(cities).forEach(function(city) { %>
+            <li>
+                <%= city.title %> -
+                    <%= city.pictureUrl%> -
+                        <a href="">
+                            <%= city._id%>
+                        </a>
+            </li>
+            <% }); %>
+
+    </ul>
+
+    <a href="admin/city/form" type="button">add more city</a>
+    <a href="admin/flat/form" type="button">add more flat</a>
+
+
+</body>
+
+</html>

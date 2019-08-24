@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>
+        <%=title %>
+    </title>
+    <link rel="stylesheet" href="stylesheets/stylehelp.css">
+</head>
+
+<body>
+    <div class="container lower">
+        <h3>
+            <a href="/" class="homeLink">
+                <%=title %>
+                    <div id="logo-img" alt="Logo image"></div>
+            </a>
+        </h3>
+        <br>
+        <h1>How can we help you?</h1>
+
+        <form action="/search" class="form-inline" id="navbarNav">
+            <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Search" aria-label="Search" name="token">
+            <input type="submit" value="search" class="btn btn-info btn-lg" />
+
+        </form>
+    </div>
+
+
+    <div class="container">
+        <form id="contact" action="" method="post">
+            <h3>Travel Help</h3>
+            <h4>Contact us for custom quote</h4>
+            <fieldset>
+                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Email Address" type="email" tabindex="2" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Phone Number (optional)" type="tel" tabindex="3" required>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Your Web Site (optional)" type="url" tabindex="4" required>
+            </fieldset>
+            <fieldset>
+                <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
+            </fieldset>
+            <fieldset>
+                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+            </fieldset>
+
+        </form>
+    </div>
+</body>
+
+</html>
