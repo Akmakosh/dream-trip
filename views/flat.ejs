@@ -5,35 +5,42 @@
     <title>
         <%=title %>
     </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='../stylesheets/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
-<body>
-    <div class="container lower">
+<body onload="onload()">
+    <div class="container ">
         <h3>
             <a href="/" class="homeLink">
+                Home
                 <div id="logo-img" alt="Logo image"></div>
             </a>
         </h3>
-        <br>
 
         <h1>
             <%=title %>
         </h1>
         <h4>Welcome to
-            <%=title %>
+            <%=city %>
+                <%=title %>
         </h4>
 
         <div class="card-group">
-            <img src="<%=picture1 %>" class="card animate" alt="<%=title%>">
-            <img src="<%=picture2 %>" class="card animate" alt="<%=title%>">
+            <img src="<%=picture1 %>" class="card  animate" alt="<%=title%>">
+            <img src="<%=picture2 %>" class="card  animate" alt="<%=title%>">
 
         </div>
 
         <div class="card-group">
-            <img src="<%=picture3 %>" class="card animate" alt="<%=title%>">
-            <img src="<%=picture4 %>" class="card animate" alt="<%=title%>">
+            <img src="<%=picture3 %>" class="card square animate" alt="<%=title%>">
+            <img src="<%=picture4 %>" class="card square animate" alt="<%=title%>">
 
         </div>
         <div class="card-body">
@@ -41,7 +48,73 @@
                 <%=description%>
             </p>
         </div>
+
+        <form id="add-item-form">
+            <label for="start">Check-in:</label>
+            <input type="date" name="trip_start" min="2019-08-25" max="2020-12-31">
+
+            <label for="start">Check-out:</label>
+            <input type="date" name="trip_end" min="2019-08-25" max="2020-12-31">
+            <br>
+            <br>
+            <input type="submit" value="add to cart" class="mybtn basket" placeholder="Add to Cart" id="addItemBtn" />
+            <input type="hidden" name="flatid" value="<%=flatId%>" />
+        </form>
     </div>
+
+    <!-- comments -->
+    <h2 class="text-center">Comments</h2>
+
+    <div class="com-form-container">
+
+
+        <% JSON.parse(comments).forEach(function(comment) { %>
+            <div class="comment">
+                <div class="comment-user-pic list-inline-item">
+                    <img src="https://www.loginradius.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png" alt="<%=comment.email%>" width="50px" />
+                </div>
+                <div class="comment-text list-inline-item">
+                    <%= comment.comBody%>
+                </div>
+            </div>
+            <% }); %>
+
+                <form method="POST" action="/comment/add">
+                    <input type="text" placeholder="Email">
+                    <!-- <div class="alert alert-danger" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                        <span class="sr-only">Error:</span> Enter a valid email address
+                    </div> -->
+                    <textarea name="comBody" id="biggerbox" placeholder="Add your comment"></textarea>
+                    <input type="hidden" name="flatId" value="<%=flatId%>">
+                    <button type="submit" class="mybtn combtn">Submit</button>
+                </form>
+
+    </div>
+
+
+
+    <!-- footer -->
+    <div class="panel-footer">
+        <div class="container">
+            <p class="text-center">FOLLOW US</p>
+            <div class="row">
+                <section id="hours" class="col-sm-4">
+                </section>
+                <section id="social" class="col-sm-4">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <hr class="visible-xs">
+                </section>
+                <section id="testimonials" class="col-sm-4">
+                </section>
+            </div>
+            <div class="text-center">&copy; Copyright Travel by Malika 2019</div>
+        </div>
+    </div>
+
+    <script src="../javascripts/add-basket-item.js"></script>
 </body>
 
 </html>

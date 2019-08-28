@@ -5,28 +5,33 @@
     <title>
         <%=title %>
     </title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='../stylesheets/style.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container lower">
+
+    <div class="container ">
         <h3>
             <a href="/" class="homeLink">
-                <%=title %>
+               Home
                     <div id="logo-img" alt="Logo image"></div>
             </a>
         </h3>
-        <br>
-
 
         <h1>Welcome to
             <%=title %>
         </h1>
 
-        <div class="card text-center" style="width: 40rem;">
+        <div class="card central lower">
             <a href="/city/" <%=city %>>
-            <img src="<%=pictureUrl %>" class="card-img-top" alt="<%=title%>">
+            <img src="<%=pictureUrl %>" class="card-img" alt="<%=title%>">
         </a>
             <div class="card-body">
                 <p class="card-text">
@@ -34,23 +39,47 @@
                 </p>
             </div>
         </div>
+
+
+        <h2>
+            <%= city%> places to stay
+        </h2>
+
+        <div class="card-deck lower" id="flat">
+            <% JSON.parse(flats).forEach(function(flat) { %>
+                <div class="card ">
+                    <a href="/flat/<%= flat._id%>">
+                    <img src="<%= flat.picture1%>" class="card-img">
+                        </a>
+                    <p card-text>
+                        <%= flat.title %> -</p>
+                </div>
+                <% }); %>
+
+        </div>
     </div>
 
-    <h2>
-        <%= city%> places to stay
-    </h2>
+    <!-- footer -->
+    <div class="panel-footer">
+        <div class="container">
+            <p class="text-center">FOLLOW US</p>
+            <div class="row">
+                <section id="hours" class="col-sm-4">
+                </section>
+                <section id="social" class="col-sm-4">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <hr class="visible-xs">
+                </section>
+                <section id="testimonials" class="col-sm-4">
+                </section>
+            </div>
+            <div class="text-center">&copy; Copyright Travel by Malika 2019</div>
+        </div>
+    </div>
 
-    <ul class="inline">
-        <% JSON.parse(flats).forEach(function(flat) { %>
-            <li class="inline">
-                <%= flat.title %> -
-                    <a href="/flat/<%= flat._id%>">
-                    <img src="<%= flat.picture1%>">
-                        </a>
-            </li>
-            <% }); %>
-
-    </ul>
+    <script src="../public/javascripts/flat-fetch.js"></script>
 </body>
 
 </html>

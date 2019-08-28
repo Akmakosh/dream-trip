@@ -9,22 +9,31 @@
         <%=title %>
     </title>
     <link rel="stylesheet" href="stylesheets/stylehelp.css">
+    <link rel='stylesheet' href='../stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="container lower">
+    <div class="container">
         <h3>
             <a href="/" class="homeLink">
-                <%=title %>
+                <%=title %> Help
                     <div id="logo-img" alt="Logo image"></div>
             </a>
         </h3>
         <br>
         <h1>How can we help you?</h1>
 
-        <form action="/search" class="form-inline" id="navbarNav">
-            <input id="keyword" type="text" class="form-control ml-auto mr-2" placeholder="Search" aria-label="Search" name="token">
-            <input type="submit" value="search" class="btn btn-info btn-lg" />
+        <form action="/search" class="form-group" id="navbarNav">
+            <input id="keyword" type="text" class="form-control ml-auto mr-2 square" placeholder="Search" aria-label="Search" name="token">
+            <input type="submit" value="search" class="mybtn centerbtn" />
 
         </form>
     </div>
@@ -50,7 +59,7 @@
                 <textarea placeholder="Type your message here...." tabindex="5" required></textarea>
             </fieldset>
             <fieldset>
-                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+                <button name="submit" type="submit" id="contact-submit" class="mybtn" data-submit="...Sending">Submit</button>
             </fieldset>
 
         </form>

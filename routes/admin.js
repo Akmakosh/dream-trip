@@ -71,8 +71,8 @@ router.post('/city/add', function(req, res) {
 
 
 router.post('/flat/add', function(req, res) {
-    FlatsModel.findOne({ flat: req.body.flat }).exec(function(err, flat) {
-        if (!flat) {
+    FlatsModel.findOne({ title: req.body.title }).exec(function(err, thisflat) {
+        if (!thisflat) {
             const newFlat = new FlatsModel({
                 title: req.body.title,
                 picture1: req.body.picture1,

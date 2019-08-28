@@ -37,7 +37,7 @@ fetch(BASE_URL + "/landing/db/dest-fetch")
         data.forEach((aroundWorld) => {
             const worldList = `
                         <div class="card" style="width: 25rem;">
-                            <a href="${BASE_URL}/flat/${aroundWorld.city}">
+                            <a href="${BASE_URL}/city/${aroundWorld.city}">
                                 <img src="${aroundWorld.pictureUrl}" class="card-img-top" alt="pic">
                             </a>
 
